@@ -1,10 +1,13 @@
-mitovsplastid_2
+install.packages("ggplot2")
+library("ggplot2")
+
+mitovsplastid_2<- read.csv("mitovsplastid#2.csv")
 g1 <-ggplot(data = mitovsplastid_2, aes(x = Genome, y =X.Genome.length.mito., color = "red")) + geom_point() +xlab('Genome') + 
   ylab('Molecular length') +
   labs(title = 'Mitochondria Length vs Plastid lengths')+ 
   labs(colour ="Scale of lengths") + geom_point() +
   theme(axis.text = element_text(angle=90,hjust=1,vjust=0.5))+
-  geom_point(data = mitovsplastid, aes(x = Genome, y = X.Genome.length.plastid, color = "blue"))
+  geom_point(data = mitovsplastid_2, aes(x = Genome, y = X.Genome.length.plastid, color = "blue"))
 g1
 
 
@@ -14,16 +17,16 @@ ggplot(data = mitovsplastid_2, aes(x = Genome, y =X.Genome.length.mito., color =
   labs(title = 'Mitochondria Length vs Plastid lengths')+ 
   labs(colour ="Scale of lengths") + geom_col() +
   theme(axis.text = element_text(angle=90,hjust=1,vjust=0.5))+
-  geom_col(data = mitovsplastid, aes(x = Genome, y = X.Genome.length.plastid, color = "blue"))
+  geom_col(data = mitovsplastid_2, aes(x = Genome, y = X.Genome.length.plastid, color = "blue"))
 
-Geom Jitter ( reduce overplotting)
+Geom Jitter(reduce overplotting)
 
 ggplot(data = mitovsplastid_2, aes(x = Genome, y =X.Genome.length.mito., color = "red")) + geom_jitter()+
   xlab('Genome') +ylab('Molecular length') +
   labs(title = 'Mitochondria Length vs Plastid lengths')+ 
   labs(colour ="Scale of lengths") + geom_jitter() +
   theme(axis.text = element_text(angle=90,hjust=1,vjust=0.5))+
-  geom_jitter(data = mitovsplastid, aes(x = Genome, y = X.Genome.length.plastid, color = "blue")) 
+  geom_jitter(data = mitovsplastid_2, aes(x = Genome, y = X.Genome.length.plastid, color = "blue")) 
 
 Ranges of length by color
 
