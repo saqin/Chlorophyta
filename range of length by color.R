@@ -25,3 +25,4 @@ mc3 +  scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
                      labels = trans_format("log10", math_format(10^.x)))
 #manipulate the range of colors by using color gradient command 
 mc3 + scale_colour_gradientn(colours = terrain.colors(10))
+
