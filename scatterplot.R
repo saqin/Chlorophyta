@@ -36,3 +36,4 @@ library(scales)
 mc1 + scale_y_continuous(labels = scientific)
 mc1 +  scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
                      labels = trans_format("log10", math_format(10^.x)))
+
