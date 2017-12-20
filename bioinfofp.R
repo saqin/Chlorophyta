@@ -13,3 +13,4 @@ regexpr("^.NC_",(table[0]))
 regexpr("^.?=NC_",unlist(table[1]))
 
 
+
